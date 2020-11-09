@@ -3,8 +3,8 @@ class Config():
         self.seed = 36
 
         # data dir
-        self.root_dir = 'The folder which you extracted and saved all the data (e.g. all_data.csv)'
-        self.eicu_dir = 'The path into your local eICU dataset '
+        self.root_dir = 'data' #'The folder which you extracted and saved all the data (e.g. all_data.csv)'
+        self.eicu_dir = 'physionet.org/files/eicu-crd/2.0' # 'The path into your local eICU dataset '
 
         # task details
         self.task = args.task #['phen', 'dec', 'mort', 'rlos']

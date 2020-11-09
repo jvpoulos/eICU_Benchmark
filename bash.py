@@ -8,7 +8,7 @@ from keras import backend as K
 TASK = ['mort', 'rlos', 'phen','dec'] 
 NUM = [True,False]
 CAT = [True,False]
-OHE = [True,False]
+OHE = [False]
 ANN = [True,False]
 
 class build_args():

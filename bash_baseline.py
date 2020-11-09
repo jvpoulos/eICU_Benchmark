@@ -27,8 +27,6 @@ for t in TASK:
                     args.cat = ca
                     args.ann = an
                     args.ohe = oh
-                    # args.ohe = False
-                    # args.ann = False
                     args.mort_window = 48
                     config = Config(args)
                     print('{}_num_{}_cat_{}_ann_{}_ohe_{} Started'.format(t, str(nu), str(ca),str(an),str(oh)))

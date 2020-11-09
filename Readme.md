@@ -21,13 +21,15 @@ Be sure to cite [eICU paper!](https://www.nature.com/articles/sdata2018178)
 ## Requirements
 You must have the csv files of eICU dataset on your local machine
 ### Packages
-* numpy==1.15.0
-* scipy==1.2.0
-* scikit-learn==0.21.2
-* pandas==0.24.1
+* numpy==1.15.0 or higher (tested on 1.19.2)
+* scipy==1.2.0 or higher (tested on 1.5.2)
+* scikit-learn==0.21.2 or higher (tested on 0.23.2)
+* pandas==0.24.1 or higher (tested on 1.0.3)
 
 For Feedforward Network and LSTM:
-* Keras==2.2.4
+* Keras==2.2.4 or higher (tested on 2.3.1)
+* Tensorflow 1 (tested on 1.13.1)
+* CUDA 10.1 
 
 ## Structure
 The content of this repository can be divide into two parts:
@@ -47,8 +49,9 @@ Here are the required steps to create the benchmark. The eICU dataset CSVs shoul
 2. The following command generates one directory per each patient and writes patients demographics into pats.csv, the items extracted from Nursecharting into nc.csv and the lab items into lab.csv and then converts these three csv files into one timeseries.csv for each patient.
 you will have one csv file with all the patients data in a time-series manner for all the four tasks.
 
-
-> python data_extraction_root.py
+<!-- > python data_extraction_root.py -->
+> chmod +x data-extraction-root.sh
+> sbatch data-extraction-root.sh
 
 # Run the models
 3. Before going to run the experiment you need to set the desired configuration in the bash.py file (e.g. which tasks to choose with with settings)
@@ -58,9 +61,11 @@ you will have one csv file with all the patients data in a time-series manner fo
 5. The experiments are divided into two scripts for baseline and for the LSTM. In the both scripts there are arguments related to task, numerical, categorical, artificial neural networks, one-hot encoding, and mortality window data. Those arguments can be provided as binary and for mortality window we consider the first 24 and 48 hours of the admission data.
 
 6. The baseline experiments can be ran by running 
-> python bash_baseline.py 
+<!-- > python bash_baseline.py  -->
+> chmod +x bash-baseline.sh
+> sbatch bash-baseline.sh
 
 7. The LSTM experiments can be ran by running 
-> python bash.py 
-
-
+<!-- > python bash.py  -->
+> chmod +x bash.sh
+> sbatch bash.sh
