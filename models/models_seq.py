@@ -27,11 +27,7 @@ from config import Config
 
 seed = 1
 np.random.seed(seed)
-<<<<<<< HEAD
 tf.random.set_random_seed(seed)
-=======
-tf.random.set_seed(seed)
->>>>>>> 0479166d973572c3ae940920431cf790bc4704df
 
 pe = os.path.exists
 pj = os.path.join
